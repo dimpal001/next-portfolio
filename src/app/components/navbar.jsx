@@ -6,9 +6,7 @@ import { useState } from 'react'
 import { motion, stagger } from 'framer-motion'
 import Image from 'next/image'
 import Sign from '../../../public/sign.png'
-import InstaIcon from '../../../public/instaIcon.svg'
-import LinkedInIcon from '../../../public/linkedIn.svg'
-import GithubIcon from '../../../public/githubIcon.svg'
+import SocialLinks from './socialLinks'
 
 const links = [
   { url: '/', title: 'Home' },
@@ -92,16 +90,8 @@ const Navbar = () => {
         <Image src={Sign} className='w-[120px]' alt='' />
       </Link>
 
-      <div className='flex gap-3 items-center'>
-        <Link href={'https://github.com/dimpal001'} target='_blank'>
-          <Image src={GithubIcon} alt='' className='w-[40px]' />
-        </Link>
-        <Link href={'https://instagram.com/dimple__'} target='_blank'>
-          <Image src={InstaIcon} alt='' className='w-[35px]' />
-        </Link>
-        <Link href={'https://linkedin.com/'} target='_blank'>
-          <Image src={LinkedInIcon} alt='' className='w-[40px]' />
-        </Link>
+      <div className='max-sm:hidden'>
+        <SocialLinks />
       </div>
 
       {/* Button */}

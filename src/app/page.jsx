@@ -4,11 +4,12 @@ import Image from 'next/image'
 import HeroImg from '../../public/heroImg.png'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import SocialLinks from './components/socialLinks'
 
 const Home = () => {
   return (
     <motion.div
-      className='h-full'
+      className='h-full bg-[#0a0524]'
       initial={{ y: '-200vh' }}
       animate={{ y: '0%' }}
       transition={{ duration: 1 }}
@@ -21,14 +22,16 @@ const Home = () => {
 
         {/* Text Box  */}
         <div className='lg:w-[65%]'>
-          <p className='text-6xl max-md:text-4xl pb-5 font-bold bg-gradient-to-r from-red-700 to-blue-600 text-transparent bg-clip-text'>
+          <p className='text-6xl max-md:text-4xl max-sm:text-center pb-5 font-bold bg-gradient-to-r from-red-700 to-blue-600 text-transparent bg-clip-text'>
             Designing impactful user experiences
           </p>
-          <p className='text-lg max-md:pb-5'>
-            Delve into my portfolio of expertly crafted web projects, each
-            showcasing creativity, skill, and passion for web development
-            excellence.
+          <p className='text-lg max-sm:text-center max-md:pb-5'>
+            Explore my portfolio showcasing web projects crafted with passion
+            and expertise.
           </p>
+          <div className='flex md:hidden justify-center'>
+            <SocialLinks />
+          </div>
           <div className='flex max-md:justify-center gap-4 md:gap-8 py-5'>
             <Link href={'/projects'}>
               <button className='p-3 bg-green-500 text-white font-semibold px-4 rounded-xl'>

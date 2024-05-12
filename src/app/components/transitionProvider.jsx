@@ -8,7 +8,10 @@ const TransitionProvider = ({ children }) => {
   const pathName = usePathname()
   return (
     <AnimatePresence mode='wait'>
-      <div key={pathName} className='w-screen h-screen text-white bg-[#0a0524]'>
+      <div
+        key={pathName}
+        className='w-screen h-screen text-gray-300 bg-[#0a0524]'
+      >
         <motion.div
           className='w-screen h-screen fixed bg-black rounded-b-[100px] z-40'
           animate={{ height: '0vh' }}

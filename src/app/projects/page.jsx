@@ -8,7 +8,9 @@ import SL from '../../../public/sl.png'
 import Aarambh from '../../../public/aarambh.png'
 import Typing from '../../../public/typing.png'
 import SQ from '../../../public/sq.png'
+import Scroll from '../../../public/scroll.svg'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 const projects = [
   {
@@ -17,8 +19,8 @@ const projects = [
     description:
       'A comprehensive college information system for North-Eastern Hill University (NEHU) that handles affiliated colleges, providing centralized management of academic and administrative data.',
     img: CDC,
-    githubLink: '',
-    websiteLink: 'http://cdc.nenu.ac.in',
+    githubLink: 'https://github.com/AKSinghWeb/cis-client',
+    websiteLink: 'http://cdc.nehu.ac.in',
   },
   {
     id: 2,
@@ -26,7 +28,7 @@ const projects = [
     description:
       'An innovative bike taxi service website similar to Rapido, built using React.js and Tailwind CSS. Collaborated with my friend Anupam Kumar Singh on this project.',
     img: Wegoo,
-    githubLink: '',
+    githubLink: 'https://github.com/AKSinghWeb/wegoo',
     websiteLink: 'https://wegoo.in',
   },
   {
@@ -35,8 +37,8 @@ const projects = [
     description:
       'A MERN stack website providing access to the latest court judgments in India, legal advice, and study materials for law students and professionals.',
     img: SL,
-    githubLink: '',
-    websiteLink: 'https://solvelitigation.com',
+    githubLink: 'https://github.com/dimpal001/Solve_Litigation_Frontend',
+    websiteLink: 'https://www.solvelitigation.com',
   },
   {
     id: 4,
@@ -44,8 +46,8 @@ const projects = [
     description:
       'Collaborated with my friend Anupam Kumar Singh to create a modern and responsive website for Aarambh Hotel and Banquet using React.js and Tailwind CSS.',
     img: Aarambh,
-    githubLink: '',
-    websiteLink: 'https://aarambhhotelandbanquet.com',
+    githubLink: 'https://github.com/AKSinghWeb/aarambh',
+    websiteLink: 'https://www.aarambhhotelandbanquet.com',
   },
   {
     id: 5,
@@ -53,7 +55,7 @@ const projects = [
     description:
       'Developed a React-based typing speed test website that allows users to evaluate their typing skills and improve their speed and accuracy.',
     img: Typing,
-    githubLink: '',
+    githubLink: 'https://github.com/dimpal001/typing_speed_test',
     websiteLink: 'https://typingtest.tech',
   },
   {
@@ -62,31 +64,36 @@ const projects = [
     description:
       'A WordPress website providing the latest job opportunity news, exam updates, and quizzes for students and job seekers. Collaborated with my friend Anupam Kumar Singh on this project.',
     img: SQ,
-    githubLink: '',
+    githubLink: 'https://github.com/dimpal001',
     websiteLink: 'https://smartquize.com',
   },
 ]
 
 const Projects = () => {
+  const projectsRef = useRef(null)
+
+  const handleScrollToProjects = () => {
+    projectsRef.current.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <motion.div
-      className='h-full'
+      className='min-h-full'
       initial={{ y: '-200vh' }}
       animate={{ y: '0%' }}
       transition={{ duration: 1 }}
     >
-      <div className='min-h-[200vh] bg-[#0a0524] px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
+      <div className='h-full bg-[#0a0524] px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
         <div>
-          <div className='h-[80vh] flex flex-col justify-center items-center'>
-            <p className='text-5xl text-green-500 font-bold'>My Works</p>
-            <p className='py-5 max-sm:text-justify text-center'>
-              Here, you&apos;ll find a showcase of projects I&apos;ve poured my
-              heart and soul into. From sleek websites to innovative
-              applications, each project reflects my passion for web development
-              and commitment to excellence. Take a look around and get inspired
-              by what&apos;s possible!
-            </p>
+          <div className='h-[85vh] flex flex-col justify-center items-center'>
+            <p className='text-5xl text-green-500 font-extrabold'>My Works</p>
+            <Image
+              onClick={handleScrollToProjects}
+              src={Scroll}
+              className='w-[50px] cursor-pointer mt-10'
+              alt=''
+            />
           </div>
+          <div ref={projectsRef} id='projects' className='mb-5' />
           <div className='grid grid-cols-2 max-sm:grid-cols-1 pb-10 gap-7'>
             {projects.map((project) => (
               <Card
@@ -109,10 +116,12 @@ const Card = ({ title, description, img, githubLink, websiteLink }) => {
   return (
     <div className='border border-gray-700 bg-[#12102b] rounded-2xl p-12'>
       <div className='flex flex-col gap-3'>
-        <p className='text-3xl font-semibold'>{title}</p>
+        <p className='text-3xl text-gray-100 font-semibold'>{title}</p>
         <Image src={img} alt='' className='w-full rounded-2xl' />
-        <p className='text-lg'>{description}</p>
-        <div className='flex max-md:justify-center gap-4 md:gap-6 pt-3'>
+        <p className='text-lg text-gray-400 max-md:text-justify'>
+          {description}
+        </p>
+        <div className='flex justify-center gap-4 md:gap-6 pt-3'>
           <Link target='_blank' href={githubLink}>
             <button className='p-2 bg-green-500 text-white font-semibold px-5 rounded-xl'>
               Github
