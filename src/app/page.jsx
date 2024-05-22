@@ -9,7 +9,7 @@ import SocialLinks from './components/socialLinks'
 const Home = () => {
   return (
     <motion.div
-      className='h-full bg-[#0a0524]'
+      className='lg:mt-28 bg-[#0a0524]'
       initial={{ y: '-200vh' }}
       animate={{ y: '0%' }}
       transition={{ duration: 1 }}
