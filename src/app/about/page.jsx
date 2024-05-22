@@ -41,7 +41,7 @@ const About = () => {
   }
   return (
     <motion.div
-      className='min-h-full'
+      className='lg:h-[1000px] h-[1300px]'
       initial={{ y: '-200vh' }}
       animate={{ y: '0%' }}
       transition={{ duration: 1 }}
