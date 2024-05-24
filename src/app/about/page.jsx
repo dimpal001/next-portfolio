@@ -41,7 +41,7 @@ const About = () => {
   }
   return (
     <motion.div
-      className='max-md:mt-32'
+      className='max-md:mt-16'
       initial={{ y: '-200vh' }}
       animate={{ y: '0%' }}
       transition={{ duration: 1 }}

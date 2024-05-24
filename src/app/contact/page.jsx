@@ -42,7 +42,7 @@ const Contact = () => {
       animate={{ y: '0%' }}
       transition={{ duration: 1 }}
     >
-      <div className='flex max-lg:flex-col justify-center items-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
+      <div className='flex pt-5 max-lg:flex-col justify-center items-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
         <div className='lg:w-1/2 flex items-center justify-center'>
           <motion.div className='text-6xl max-lg:text-4xl font-bold'>
             {text.split('').map((letter, index) => (

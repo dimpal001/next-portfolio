@@ -5,6 +5,7 @@ import Link from 'next/link'
 import GithubIcon from '../../../public/githubIcon.svg'
 import InstaIcon from '../../../public/instaIcon.svg'
 import LinkedInIcon from '../../../public/linkedIn.svg'
+import WhatsApp from '../../../public/whatsapp.svg'
 
 const SocialLinks = () => {
   return (
@@ -20,6 +21,9 @@ const SocialLinks = () => {
         target='_blank'
       >
         <Image src={LinkedInIcon} alt='' className='w-[40px]' />
+      </Link>
+      <Link href={'https://wa.me/916026998751'} target='_blank'>
+        <Image src={WhatsApp} alt='' className='w-[37px]' />
       </Link>
     </div>
   )
